@@ -1,15 +1,19 @@
+use serde::Serialize;
+
 use crate::domain::entities::post::Post;
 
 
-pub struct GetPostInput {}
+#[derive(Serialize)] 
+pub struct GetApiCallInputType {}
 
-pub struct GetPostOutput {
-    pub posts: Vec<Post>,
+#[derive(serde::Serialize)]
+pub struct GetApiCallOutputType {
+    pub articles: Vec<Post>,
 }
 
-pub trait UseCase {
+pub trait GetApiCallUseCaseType {
     type Input;
     type Output;
 
-    fn execute(&self, input: Self::Input) -> Self::Output;
+    async fn execute(&self, input: Self::Input) -> Self::Output;
 }

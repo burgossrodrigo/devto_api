@@ -10,3 +10,13 @@ pub mod domain {
         pub mod post;
     }
 }
+
+pub mod infra {
+    pub mod handler {
+        pub mod post;
+    }
+}
+
+pub mod use_case {
+    pub mod api_call;
+}
